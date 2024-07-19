@@ -73,8 +73,8 @@ public class FileValidator extends AbstractValidator {
             fail("must-not-have-empty-fields", string("fv-must-not-have-empty-fields"));
         }
 
-        if (lvname.getBitRate() != null) {
-            fail("must-not-include-bit-rate", string("fv-must-not-include-bit-rate", lvname.getBitRate()));
+        if (!"128kb".equals(lvname.getBitRate())) {
+            fail("must-include-bit-rate", string("fv-must-include-bit-rate", lvname.getBitRate()));
         }
 
         if (lvname.getTitle() == null) {
